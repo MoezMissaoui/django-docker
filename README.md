@@ -1,2 +1,2 @@
-# django-docker
+# dockerize-django
 Dockerize Django Application
