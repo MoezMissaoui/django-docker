@@ -18,9 +18,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=moez
-      - POSTGRES_PASSWORD=moez
-      - POSTGRES_DB=hello_world_db
+      - ./.env.dev.db
 
 volumes:
   postgres_data:

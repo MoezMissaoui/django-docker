@@ -2,6 +2,6 @@
 import socket
 
 if socket.gethostname()=="DESKTOP-G87VIM5":
-    from .config.dev_settings import *
+    from .config.local_settings import *
 else:
-    from .config.prod_settings import *
+    from .config.docker_settings import *
