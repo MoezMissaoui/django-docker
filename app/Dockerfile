@@ -12,13 +12,15 @@ ENV PYTHONUNBUFFERED 1
 # install psycopg2 dependencies
 RUN apk update \
     && apk add postgresql-dev gcc python3-dev musl-dev
-    
+
 # install dependencies
 RUN pip install --upgrade pip
 # copy project
 COPY . .
 RUN pip install -r requirements.txt
 
+RUN sed -i 's/\r$//g' /usr/src/app/entrypoint.sh
+RUN chmod +x /usr/src/app/entrypoint.sh
 
 # run entrypoint.sh
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
